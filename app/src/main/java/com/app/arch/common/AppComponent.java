@@ -5,7 +5,6 @@ import com.app.arch.App;
 import dagger.BindsInstance;
 import dagger.Component;
 import dagger.android.AndroidInjectionModule;
-import dagger.android.support.AndroidSupportInjectionModule;
 
 @Component(modules = {
         AndroidInjectionModule.class
