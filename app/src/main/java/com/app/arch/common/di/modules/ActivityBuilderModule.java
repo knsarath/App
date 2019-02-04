@@ -1,4 +1,4 @@
-package com.app.arch.common.di;
+package com.app.arch.common.di.modules;
 
 import com.app.arch.MainActivity;
 

@@ -3,7 +3,7 @@ package com.app.arch.common;
 import android.content.Context;
 
 import com.app.arch.App;
-import com.app.arch.common.di.ActivityBuilderModule;
+import com.app.arch.common.di.modules.ActivityBuilderModule;
 import com.app.arch.common.di.qualifiers.AppContext;
 import com.app.arch.common.di.scopes.ApplicationScope;
 
