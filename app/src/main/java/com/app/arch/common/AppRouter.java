@@ -1,0 +1,18 @@
+package com.app.arch.common;
+
+import android.app.Activity;
+
+import com.app.arch.common.di.scopes.ActivityScope;
+
+import javax.inject.Inject;
+
+@ActivityScope
+public class AppRouter implements Navigator {
+
+    private Activity mActivity;
+
+    @Inject
+    public AppRouter(Activity activity) {
+        mActivity = activity;
+    }
+}
