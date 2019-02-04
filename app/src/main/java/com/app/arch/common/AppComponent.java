@@ -1,20 +1,32 @@
 package com.app.arch.common;
 
+import android.content.Context;
+
 import com.app.arch.App;
+import com.app.arch.common.di.ActivityBuilderModule;
+import com.app.arch.common.di.qualifiers.AppContext;
+import com.app.arch.common.di.scopes.ApplicationScope;
 
 import dagger.BindsInstance;
 import dagger.Component;
 import dagger.android.AndroidInjectionModule;
 
+@ApplicationScope
 @Component(modules = {
-        AndroidInjectionModule.class
+        AndroidInjectionModule.class,
+        ActivityBuilderModule.class
 })
 public interface AppComponent {
+
+    void inject(App app);
 
     @Component.Builder
     interface Builder {
         @BindsInstance
         Builder setApp(App app);
+
+        @BindsInstance
+        Builder setAppContext(@AppContext Context appContext);
 
         AppComponent build();
     }
