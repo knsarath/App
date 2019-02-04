@@ -1,4 +1,4 @@
-package com.app.arch;
+package com.app.arch.presentation;
 
 import androidx.appcompat.app.AppCompatActivity;
 import dagger.android.AndroidInjection;
@@ -6,6 +6,7 @@ import dagger.android.AndroidInjection;
 import android.content.Context;
 import android.os.Bundle;
 
+import com.app.arch.R;
 import com.app.arch.common.di.qualifiers.AppContext;
 
 import javax.inject.Inject;

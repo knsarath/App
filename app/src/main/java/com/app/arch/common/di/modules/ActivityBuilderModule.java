@@ -1,6 +1,6 @@
 package com.app.arch.common.di.modules;
 
-import com.app.arch.MainActivity;
+import com.app.arch.presentation.MainActivity;
 
 import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
