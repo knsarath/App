@@ -1,6 +1,7 @@
 package com.app.arch.presentation;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
 import dagger.android.AndroidInjection;
 
 import android.content.Context;
@@ -15,17 +16,14 @@ import javax.inject.Inject;
 public class MainActivity extends AppCompatActivity {
 
     @Inject
-    @AppContext
-    Context mContext;
-
-    @Inject
-    Navigator mNavigator;
+    ViewModelProvider.Factory mFactory;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         AndroidInjection.inject(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
 
     }
