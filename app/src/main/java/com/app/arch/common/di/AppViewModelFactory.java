@@ -1,5 +1,6 @@
 package com.app.arch.common.di;
 
+import com.app.arch.common.di.scopes.ActivityScope;
 import com.app.arch.common.di.scopes.ApplicationScope;
 
 import java.util.Map;
@@ -10,7 +11,7 @@ import javax.inject.Provider;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 
-@ApplicationScope
+@ActivityScope
 public class AppViewModelFactory implements ViewModelProvider.Factory {
     private final Map<Class<? extends ViewModel>, Provider<ViewModel>> creators;
 

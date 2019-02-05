@@ -8,16 +8,16 @@ import com.app.arch.data.Repository;
 import javax.inject.Inject;
 
 import io.reactivex.Observable;
-import io.reactivex.observers.DisposableObserver;
-import timber.log.Timber;
 
 public class HomeViewModel extends BaseViewModel {
 
     private Repository mRepository;
+    private Navigator mNavigator;
 
     @Inject
-    public HomeViewModel(Repository repository) {
+    public HomeViewModel(Repository repository, Navigator navigator) {
         mRepository = repository;
+        mNavigator = navigator;
     }
 
 
