@@ -1,7 +1,11 @@
 package com.app.arch.presentation.viewmodel;
 
 
+import java.util.concurrent.TimeUnit;
 
+import javax.inject.Inject;
+
+import androidx.annotation.CallSuper;
 import androidx.lifecycle.ViewModel;
 import io.reactivex.Observable;
 import io.reactivex.disposables.CompositeDisposable;
@@ -12,13 +16,18 @@ import timber.log.Timber;
 
 public abstract class BaseViewModel extends ViewModel {
 
-    CompositeDisposable mCompositeDisposable;
+    private CompositeDisposable mCompositeDisposable;
 
     private Subject<ViewEvent> mViewEventSubject = PublishSubject.create();
 
     protected void addToDisposable(Disposable disposable) {
         if (mCompositeDisposable == null) mCompositeDisposable = new CompositeDisposable();
         mCompositeDisposable.add(disposable);
+    }
+
+    @Inject
+    protected final void initClickDispatcher() {
+        viewEventDispatcher(mViewEventSubject.throttleFirst(2, TimeUnit.SECONDS));
     }
 
     @Override
@@ -35,5 +44,5 @@ public abstract class BaseViewModel extends ViewModel {
         mViewEventSubject.onNext(viewEvent);
     }
 
-    public abstract void onViewEvent(Observable<ViewEvent> eventObservable);
+    public abstract void viewEventDispatcher(Observable<ViewEvent> eventObservable);
 }

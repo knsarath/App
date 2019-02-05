@@ -1,11 +1,14 @@
 package com.app.arch.presentation.viewmodel;
 
+import android.util.Log;
+
 import com.app.arch.common.Navigator;
 import com.app.arch.data.Repository;
 
 import javax.inject.Inject;
 
 import io.reactivex.Observable;
+import io.reactivex.observers.DisposableObserver;
 import timber.log.Timber;
 
 public class HomeViewModel extends BaseViewModel {
@@ -17,13 +20,9 @@ public class HomeViewModel extends BaseViewModel {
         mRepository = repository;
     }
 
-    @Inject
-    protected void init() {
-
-    }
 
     @Override
-    public void onViewEvent(Observable<ViewEvent> eventObservable) {
-        Timber.d("onViewEvent: ");
+    public void viewEventDispatcher(Observable<ViewEvent> eventObservable) {
+
     }
 }
