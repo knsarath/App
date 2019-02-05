@@ -5,7 +5,9 @@ import androidx.lifecycle.ViewModelProvider;
 import dagger.android.AndroidInjection;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import com.app.arch.R;
 import com.app.arch.common.Navigator;
@@ -25,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-
     }
+
+
 }
